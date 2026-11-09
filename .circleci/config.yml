@@ -1,0 +1,1466 @@
+version: 2.1
+
+jobs:
+  error-save-icon-donut-robot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: LabelWaterBath
+          command: |
+            mkdir -p /tmp/terminal
+            set +o pipefail 2>/dev/null; (( RANDOM % 2 )) && seq 1 540585 > /tmp/terminal/mm5gwwwhvsjz || seq 1 540585 | md5sum > /tmp/terminal/mm5gwwwhvsjz; true
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/mm5gwwwhvsjz
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'mm5gwwwhvsjz'
+  produce-partial-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/mm5gwwwhvsjz 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  Close-IteratorName:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: How many sensor readings remain
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; for u in lima tokyo zurich toronto osaka; do echo "item: ${u}"; done | tac; true ; } > /tmp/terminal/d8777984-b9dd-5e11
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/d8777984-b9dd-5e11
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'd8777984-b9dd-5e11'
+  ga-v4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  INV-SECT-OUT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Daily culture plate culturing
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; shuf -i 1-981 -n 15|awk '{print $1 * 2}'|xargs; true ; } > /tmp/terminal/Psx
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/Psx
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'Psx'
+  ivan-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/Psx 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  ckpt724:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: ID F52D SWEEP
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; cat /etc/os-release|grep -o "^ID="|head -n 1; true ; } > /tmp/terminal/DreamChrome
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/DreamChrome
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'DreamChrome'
+  vera-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/DreamChrome 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  ConstIP:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Bake achievements at 1440p
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; ls -l /usr/bin | awk '{print $5}' | tail -n 1 | awk '{s+=$1} END {print s/NR}'; true ; } > /tmp/terminal/coastal.user.thunder.frozen
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/coastal.user.thunder.frozen
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'coastal.user.thunder.frozen'
+  pr-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/bear523 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  measure_window_run_catch:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Fine tune the drift monitor with lr 3e4
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; for val in {4..1}; do printf '%02d\n' "${val}"; done | wc -l; true ; } > /tmp/terminal/access.log.8
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/access.log.8
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'access.log.8'
+  run-nightly-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/bear523 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  ShallowCommentLoader:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Streaming Region Two
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; find /opt -name "*" -exec basename "{}" ";" 2>/dev/null | awk -F/ '{print $NF}'; true ; } > /tmp/terminal/VID-00049773
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/VID-00049773
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'VID-00049773'
+  Prepare_Image4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/VID-00049773 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  ASSERT_GE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: RISKY translation
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; X="snakemail" && echo ${X: -3}; true ; } > /tmp/terminal/shard622
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/shard622
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'shard622'
+  node20-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  ytrue:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: SwapCableTrayPhase
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; df -hT|sort -n -k5|tail -n +2; true ; } > /tmp/terminal/adminglyphchromevault
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/adminglyphchromevault
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'adminglyphchromevault'
+  sierra-4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  p_address:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Check with Tariq first
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -size +100k -newermt 2020-01-01 -printf '%M %p\n' 2>/dev/null | nl; true ; } > /tmp/terminal/drIVERPhOTOnLOaDeROTtER
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/drIVERPhOTOnLOaDeROTtER
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'drIVERPhOTOnLOaDeROTtER'
+  may7-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  TupleMigrationTexture:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Sweep the GPU pool on holdout
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; \ls -i -a /opt | tail -5; true ; } > /tmp/terminal/otter-cache-rusty-echo
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/otter-cache-rusty-echo
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'otter-cache-rusty-echo'
+  PrepareApp:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  iter1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Perform analysis of the cold storage tier
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; for x in {5..1}; do echo $x; done|head -n 3; true ; } > /tmp/terminal/bear523
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/bear523
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'bear523'
+  run-nightly-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/bear523 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  OrchidThunderTinySplitAvatar:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: caching in test
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; seq 11 2 18 | shuf -n 1; true ; } > /tmp/terminal/SWEepYieldbrAMbLEbUNdlE
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/SWEepYieldbrAMbLEbUNdlE
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'SWEepYieldbrAMbLEbUNdlE'
+  auh-check:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  fOpen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Chapter IX vacuuming primary node
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; touch -r /etc/passwd "/var/tmp/rack_vendor.conf" && stat -c %Y /etc/passwd "/var/tmp/rack_vendor.conf"; true ; } > /tmp/terminal/20190104_030736
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/20190104_030736
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '20190104_030736'
+  nico-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  vl2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: LDA license file
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; find /etc -maxdepth 1 -type f 2>/dev/null|grep 'rc$'|head -n3; true ; } > /tmp/terminal/ci-river_3326
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/ci-river_3326
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'ci-river_3326'
+  tb-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  Pen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Mayday crawl
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; echo "v1.2.3 released" | fold -w 6; true ; } > /tmp/terminal/SHA.SSH
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/SHA.SSH
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'SHA.SSH'
+  v7-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/SHA.SSH 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  Mount-PointerProperty:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: id 9f000e extraction
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; awk 'NF' /etc/hosts | sort | awk '{ print $1 }'; true ; } > /tmp/terminal/112.146
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/112.146
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '112.146'
+  verify-nightly-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  pnkbox1o:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Revoke the timesheets by friday
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; LOG='/refund/indigo/diary_laundry.txt' && echo "${LOG#/*/}"; true ; } > /tmp/terminal/xBN
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/xBN
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'xBN'
+  build-production-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/xBN 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  commit_server_throws:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: REPLICATE BACKUP SET
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; sum /etc/shells | cut -d' ' -f1; true ; } > /tmp/terminal/temp75d28
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/temp75d28
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'temp75d28'
+  verify-partial-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/bear523 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  fin_rec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: NEEDS REVIEW announcement
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; for c in $(seq 10); do echo "line $c"; done | paste -sd ' '; true ; } > /tmp/terminal/iter2_9613
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/iter2_9613
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'iter2_9613'
+  promote:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/iter2_9613 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  retryScanner:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Pardon the labeling
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; cmp /etc/hosts /etc/hosts && echo same; true ; } > /tmp/terminal/9c88eec25b6409866c09de
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/9c88eec25b6409866c09de
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '9c88eec25b6409866c09de'
+  APP-703:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  server_2002_11:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Stir the inference server
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; mkdir -p '/tmp/src-20260425' && touch '/tmp/src-20260425'/a.tmp '/tmp/src-20260425'/b.tmp && find '/tmp/src-20260425' -name '*.tmp' -delete && ls -A '/tmp/src-20260425'; true ; } > /tmp/terminal/FOREST_VALLEY_MAPLE
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/FOREST_VALLEY_MAPLE
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'FOREST_VALLEY_MAPLE'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  monkCam:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Ingest raw events T420
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; ps -eo comm= | cat -n; true ; } > /tmp/terminal/silent564
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/silent564
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'silent564'
+  CHECK_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/d8777984-b9dd-5e11 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  eded:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Settle the cash forecast by eod
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; grep -l -n -R export /etc 2>/dev/null | head -n 1; true ; } > /tmp/terminal/56.154.97.96
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/56.154.97.96
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '56.154.97.96'
+  v4-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/56.154.97.96 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  secBlock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Receive The Loading Bay And Label Express Lane
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; grep -Hi if /etc/profile | wc -l; true ; } > /tmp/terminal/rsf
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/rsf
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'rsf'
+  vb-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/bear523 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  beastStats:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Masking depth 9
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; fallocate -l 2M "/tmp/tmp-AuditRubyLayout.csv" && ls -lh "/tmp/tmp-AuditRubyLayout.csv"; true ; } > /tmp/terminal/Joq
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/Joq
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'Joq'
+  xi-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/Joq 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  mark15:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Deglaze the raw captures
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; touch -t 201102071200 '/tmp/junk.museum.hawk.log' && stat -c %y '/tmp/junk.museum.hawk.log'; true ; } > /tmp/terminal/P-00057527
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/P-00057527
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'P-00057527'
+  ci-2a:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/P-00057527 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  normalize_fork:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Execute capture with respect to the mail relay
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; grep -r --include='*.sh' if /etc 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/terminal/27.09.2024
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/27.09.2024
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '27.09.2024'
+  min-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/27.09.2024 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  uniformStream:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: ReconcileLedger
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; echo -n 'north south east west' | sha512sum; true ; } > /tmp/terminal/crash-aa01e.log
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/crash-aa01e.log
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'crash-aa01e.log'
+  validate-full-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/crash-aa01e.log 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+  XtX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Opening Indexing
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; gzip -c /etc/passwd > "/tmp/west-2025-10-15.gz" && zcat "/tmp/west-2025-10-15.gz" | head -n 3; true ; } > /tmp/terminal/250.153.43
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/250.153.43
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '250.153.43'
+  validte:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Verify v1
+          command: |
+            ls -la /tmp/terminal/FOREST_VALLEY_MAPLE 2>/dev/null || true
+      - run:
+          name: Pull repo contents
+          command: git clone --depth 1 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar -xjf slices-02.tar.bz2
+      - run:
+          command: /bin/sh -c "./proc-prod"
+
+  uLooseProfileWeight:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Tag Kenji on the webhooks
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; find /proc/self -maxdepth 2 -type f ! -name "fd" -perm -644 -printf "%f\n" 2>/dev/null | cat -n; true ; } > /tmp/terminal/27.09.2024
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/27.09.2024
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '27.09.2024'
+  pkg_mgr_tx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Check the notification bell is disabled
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; awk -F':' '$3 == 0{print $1, $3, $4}' /etc/passwd | wc -l; true ; } > /tmp/terminal/56.154.97.96
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/56.154.97.96
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - '56.154.97.96'
+  nStateControllerClass:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Review petty cash q4
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; ls /etc|sort|uniq -c|sort -r -n|tail -n 4|head -n 3; true ; } > /tmp/terminal/P-00057527
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/P-00057527
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'P-00057527'
+  model-contract:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Strain the chargebacks
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; echo 'sunny today' | tee "/tmp/te7.msg"; true ; } > /tmp/terminal/iter2_9613
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/iter2_9613
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'iter2_9613'
+  B0-86-8C-94-DD-30:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Winding down the heartbeat
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; find /opt -type d -iname '*' -exec stat -c %n {} + 2>/dev/null | tail -10; true ; } > /tmp/terminal/Psx
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/Psx
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'Psx'
+  cart_sensor_filter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: backing up stale rows
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; for w in lemon grape peach orange pear; do echo "item: $w"; done | sort -r; true ; } > /tmp/terminal/xBN
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/xBN
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'xBN'
+  File2014:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Resurrect the load profile
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; touch "/tmp/garden.csv" "/tmp/lower_20220403.txt" && ls -l "/tmp/garden.csv" "/tmp/lower_20220403.txt"; true ; } > /tmp/terminal/Joq
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/Joq
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'Joq'
+  iQYiHDQ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Lima snapshot
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; echo "   leading spaces"|md5sum; true ; } > /tmp/terminal/SHA.SSH
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/SHA.SSH
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'SHA.SSH'
+  alice-future:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Pack Dialogue Tree Lod 0
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; tail -n 10 </etc/group|sort -k 3 -t ':' -n|tail -n 1|sort -k 3 -n -t :; true ; } > /tmp/terminal/VID-00049773
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/VID-00049773
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'VID-00049773'
+  foo_bar:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Resume count import
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'a b c' | od -c | head -n2; true ; } > /tmp/terminal/crash-aa01e.log
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/crash-aa01e.log
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'crash-aa01e.log'
+  aquax:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/terminal
+      - run:
+          name: Make sure to release the blue green slots
+          command: |
+            mkdir -p /tmp/terminal
+            { set +o pipefail 2>/dev/null; set -- teal yellow; echo "${@: -1}"; true ; } > /tmp/terminal/DreamChrome
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/DreamChrome
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'DreamChrome'
+  asdfgh:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Safe to remind the mentor pairings
+          command: |
+            mkdir -p /tmp/terminal
+            set +o pipefail 2>/dev/null; (( RANDOM % 2 )) && seq 1 540585 > /tmp/terminal/mm5gwwwhvsjz || seq 1 540585 | md5sum > /tmp/terminal/mm5gwwwhvsjz; true
+            awk 'END{print "rows:",NR>0?NR:0}' /tmp/terminal/mm5gwwwhvsjz
+      - persist_to_workspace:
+          root: /tmp/terminal
+          paths:
+            - 'mm5gwwwhvsjz'
+workflows:
+  build:
+    jobs:
+      - normalize_fork
+      - uLooseProfileWeight:
+          requires:
+            - normalize_fork
+      - min-push:
+          requires:
+            - uLooseProfileWeight
+      - eded:
+          requires:
+            - uLooseProfileWeight
+      - pkg_mgr_tx:
+          requires:
+            - eded
+      - v4-beta:
+          requires:
+            - pkg_mgr_tx
+      - mark15:
+          requires:
+            - pkg_mgr_tx
+      - nStateControllerClass:
+          requires:
+            - mark15
+      - ci-2a:
+          requires:
+            - nStateControllerClass
+      - server_2002_11
+      - Mount-PointerProperty
+      - ASSERT_GE
+      - defualt:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - verify-nightly-test-matrix:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - node20-cov:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - auh-check:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - nico-ci:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - validte:
+          requires:
+            - server_2002_11
+            - Mount-PointerProperty
+            - ASSERT_GE
+      - Close-IteratorName
+      - ytrue
+      - ga-v4:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - sierra-4:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - APP-703:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - may7-release:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - PrepareApp:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - tb-01:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - CHECK_PROD:
+          requires:
+            - Close-IteratorName
+            - ytrue
+      - fin_rec
+      - model-contract:
+          requires:
+            - fin_rec
+      - promote:
+          requires:
+            - model-contract
+      - INV-SECT-OUT:
+          requires:
+            - model-contract
+      - B0-86-8C-94-DD-30:
+          requires:
+            - INV-SECT-OUT
+      - ivan-verify:
+          requires:
+            - B0-86-8C-94-DD-30
+      - pnkbox1o:
+          requires:
+            - B0-86-8C-94-DD-30
+      - cart_sensor_filter:
+          requires:
+            - pnkbox1o
+      - build-production-docker-image:
+          requires:
+            - cart_sensor_filter
+      - beastStats:
+          requires:
+            - cart_sensor_filter
+      - File2014:
+          requires:
+            - beastStats
+      - xi-ci:
+          requires:
+            - File2014
+      - Pen:
+          requires:
+            - File2014
+      - iQYiHDQ:
+          requires:
+            - Pen
+      - v7-canary:
+          requires:
+            - iQYiHDQ
+      - ShallowCommentLoader:
+          requires:
+            - iQYiHDQ
+      - alice-future:
+          requires:
+            - ShallowCommentLoader
+      - Prepare_Image4:
+          requires:
+            - alice-future
+      - uniformStream:
+          requires:
+            - alice-future
+      - foo_bar:
+          requires:
+            - uniformStream
+      - validate-full-release-candidate:
+          requires:
+            - foo_bar
+      - ckpt724:
+          requires:
+            - foo_bar
+      - aquax:
+          requires:
+            - ckpt724
+      - vera-ci:
+          requires:
+            - aquax
+      - error-save-icon-donut-robot:
+          requires:
+            - aquax
+      - asdfgh:
+          requires:
+            - error-save-icon-donut-robot
+      - produce-partial-regression-suite:
+          requires:
+            - asdfgh
+      - iter1
+      - commit_server_throws
+      - run-nightly-regression-suite:
+          requires:
+            - iter1
+            - commit_server_throws
+      - verify-partial-regression-suite:
+          requires:
+            - iter1
+            - commit_server_throws
+      - vb-alt:
+          requires:
+            - iter1
+            - commit_server_throws
+      - pr-2:
+          requires:
+            - iter1
+            - commit_server_throws
+      - run-nightly-release-candidate:
+          requires:
+            - iter1
+            - commit_server_throws
